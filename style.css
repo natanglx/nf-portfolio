@@ -3,7 +3,7 @@
 *{box-sizing:border-box;margin:0}
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
 body{font:14px/1.6 Tahoma,Verdana,"Segoe UI",sans-serif;color:#111;padding-bottom:56px;overflow-x:hidden;background:#3a7bd9}
-body::before{content:"";position:fixed;inset:0;z-index:-1;background:radial-gradient(ellipse 130% 34% at 25% 112%,#4aa83a 0 62%,transparent 63%),radial-gradient(ellipse 120% 28% at 95% 116%,#2f8a2a 0 62%,transparent 63%),linear-gradient(#1f5fd6,#4c97ee 55%,#a9d3fa)}
+body::before{content:"";position:fixed;inset:0;z-index:-1;background:radial-gradient(ellipse 20% 6% at 18% 20%,rgba(255,255,255,.7),transparent 72%),radial-gradient(ellipse 26% 7% at 72% 13%,rgba(255,255,255,.6),transparent 72%),radial-gradient(ellipse 18% 5% at 88% 38%,rgba(255,255,255,.55),transparent 72%),radial-gradient(ellipse 28% 6% at 34% 44%,rgba(255,255,255,.5),transparent 72%),radial-gradient(ellipse 130% 34% at 25% 112%,#7cd05a 0,#4aa83a 45%,#3a8f2c 62%,transparent 63%),radial-gradient(ellipse 120% 28% at 95% 116%,#4fae3a 0,#2f8a2a 62%,transparent 63%),linear-gradient(#0f4fc8,#3f8ce8 50%,#a9d3fa)}
 a{color:#0033b3}
 ul{list-style:none;padding:0}
 :focus-visible{outline:2px solid #ffbf3f;outline-offset:2px}
@@ -12,7 +12,7 @@ section{padding:.9rem 0}
 
 /* Hero: NF grande direto sobre o "desktop" */
 .hero{min-height:94svh;display:grid;align-items:center;padding:3rem 0;color:#fff;text-shadow:0 1px 3px rgba(0,30,110,.65)}
-.nf{font:italic 900 clamp(7rem,34vw,13rem)/.9 "Trebuchet MS",Tahoma,sans-serif;letter-spacing:-.06em;text-shadow:0 4px 0 #0a3fb0,0 12px 30px rgba(0,20,90,.5)}
+.nf{font:italic 900 clamp(7rem,34vw,13rem)/.9 "Trebuchet MS",Tahoma,sans-serif;letter-spacing:-.06em;text-shadow:3px 0 rgba(255,60,60,.45),-3px 0 rgba(60,220,255,.45),0 4px 0 #0a3fb0,0 12px 30px rgba(0,20,90,.5)}
 .eyebrow{display:inline-block;margin-top:.8rem;padding-top:.7rem;border-top:2px solid rgba(255,255,255,.65);font-size:.78rem;letter-spacing:.14em;text-transform:uppercase}
 h1{font:700 clamp(1.7rem,5.4vw,2.6rem)/1.2 "Trebuchet MS",Tahoma,sans-serif;margin:.8rem 0}
 mark{background:none;color:#ffe27a}
@@ -24,7 +24,8 @@ mark{background:none;color:#ffe27a}
 /* Janelas */
 .win{background:var(--bd);border:3px solid #0a4fd8;border-top:0;border-radius:9px 9px 3px 3px;box-shadow:3px 4px 14px rgba(0,20,80,.45);overflow:hidden}
 .tb{display:flex;align-items:center;justify-content:space-between;gap:.6rem;padding:5px 6px 5px 10px;background:var(--tb);color:#fff;text-shadow:1px 1px #0a2a80}
-.tb h2,.tb .t{font:700 14px/1.3 Tahoma,Verdana,sans-serif}
+.tb h2,.tb .t{display:flex;align-items:center;gap:.5rem;font:700 13px/1.3 "Trebuchet MS",Tahoma,sans-serif}
+.tb h2::before,.tb .t::before{content:"";flex:none;width:14px;height:13px;border:1px solid #fff;background:linear-gradient(#2a63e0 0 4px,#fff 4px)}
 .ctl{display:flex;gap:2px;flex:none}
 .ctl i,.ctl button{width:22px;height:22px;padding:0;border:1px solid #fff;border-radius:4px;background:linear-gradient(#5a9bff,#2a63e0);color:#fff;font:700 13px/19px Arial,sans-serif;text-align:center;font-style:normal;text-shadow:none}
 .ctl .x{background:linear-gradient(#e8896b,#c43d17)}
@@ -97,3 +98,11 @@ dialog::backdrop{background:rgba(0,20,80,.5)}
   *,*::before,*::after{animation:none!important;transition:none!important}
   .js .reveal{opacity:1;transform:none}
 }
+
+/* TV antiga: linhas de varredura e bordas escurecidas (estático, sem animação) */
+body::after{content:"";position:fixed;inset:0;z-index:100;pointer-events:none;background:repeating-linear-gradient(0deg,rgba(0,0,0,.14) 0 1px,transparent 1px 3px),radial-gradient(ellipse at center,transparent 58%,rgba(0,10,40,.45))}
+@media (prefers-contrast:more){body::after{display:none}}
+
+/* Botão da janela aberta na barra de tarefas */
+.taskbar{justify-content:flex-start}
+.task{flex:0 1 220px;margin:4px auto 4px .6rem;display:flex;align-items:center;padding:0 .8rem;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;color:#fff;font-size:12px;border:1px solid #0b3dc2;border-radius:3px;background:linear-gradient(#1e4fb8,#3a74e0);box-shadow:inset 0 0 4px rgba(0,0,0,.45)}
